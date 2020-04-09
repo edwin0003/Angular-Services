@@ -1,17 +1,8 @@
-<div class="container">
+<div class="container" *ngFor="let articulo of articulos">
     <div class="articulo">
-        <h4>Encabezado</h4>
-        <p>Descripcion: </p>
-        <p>Fecha: </p>
-    </div>
-    <div class="articulo">
-        <h4>Encabezado</h4>
-        <p>Descripcion: </p>
-        <p>Fecha: </p>
-    </div>
-    <div class="articulo">
-        <h4>Encabezado</h4>
-        <p>Descripcion: </p>
-        <p>Fecha: </p>
+        <h4>{{articulo.titulo}}</h4>
+        <p> {{articulo.descripcion}} </p>
+        <p> {{articulo.fecha}} </p>
+        <p> {{articulo.usuario}} </p>
     </div>
 </div>
