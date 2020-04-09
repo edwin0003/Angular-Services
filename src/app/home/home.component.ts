@@ -16,26 +16,10 @@ export class HomeComponent implements OnInit {
 
   constructor(public usuarioInyectado: UsuarioService,public articuloInyectado:ArticulosService,public Ruta:Router) { }
 
-  ngOnInit(): void {
-    this.articulos.push({
-      titulo: 'Curso JavaScript',
-      descripcion:'hola este es un articulo de prueba de un articulo',
-      fecha: new Date(),
-      usuario: `${this.usuarioInyectado.usuario.nombre} ${this.usuarioInyectado.usuario.apellido}`
-    },
-    {
-      titulo: 'Curso React',
-      descripcion:'hola este es un articulo de prueba de un articulo',
-      fecha: new Date('01/10/2020'),
-      usuario: `${this.usuarioInyectado.usuario.nombre} ${this.usuarioInyectado.usuario.apellido}`
-    },
-    {
-      titulo: 'Curso Vuejs',
-      descripcion:'hola este es un articulo de prueba de un articulo',
-      fecha: new Date('06/26/2020'),
-      usuario: `${this.usuarioInyectado.usuario.nombre} ${this.usuarioInyectado.usuario.apellido}`
-    },
-    )
+  ngOnInit(): void {  
+    this.articuloInyectado.leerNoticias().subscribe((articulosDesdeApi)=>{
+      this.articulos= articulosDesdeApi;
+    })
   }
   irAlDetalle(articulo: Articulo){
     this.articuloInyectado.articulo=articulo;
