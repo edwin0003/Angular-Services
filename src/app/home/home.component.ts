@@ -2,6 +2,8 @@ import { Usuario } from './../models/usuario';
 import { Component, OnInit } from '@angular/core';
 import { Articulo } from '../models/articulo';
 import { UsuarioService } from '../services/usuario.service';
+import { ArticulosService } from '../services/articulos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   articulos: Array <Articulo>= new Array<Articulo>();
 
-  constructor(public usuarioInyectado: UsuarioService) { }
+  constructor(public usuarioInyectado: UsuarioService,public articuloInyectado:ArticulosService,public Ruta:Router) { }
 
   ngOnInit(): void {
     this.articulos.push({
@@ -34,6 +36,10 @@ export class HomeComponent implements OnInit {
       usuario: `${this.usuarioInyectado.usuario.nombre} ${this.usuarioInyectado.usuario.apellido}`
     },
     )
+  }
+  irAlDetalle(articulo: Articulo){
+    this.articuloInyectado.articulo=articulo;
+    this.Ruta.navigateByUrl('/articulo-detalle') 
   }
 
 }

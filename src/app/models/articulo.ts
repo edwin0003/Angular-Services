@@ -1,5 +1,4 @@
-import { Usuario } from './usuario';
-export interface Articulo{
+export class Articulo{
     titulo:string;
     descripcion: string;
     fecha: Date;
