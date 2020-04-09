@@ -11,7 +11,11 @@ export class EncabezadoComponent implements OnInit {
   constructor(public usuarioInyectado: UsuarioService) { }
 
   ngOnInit(): void {
+    console.log(this.usuarioInyectado.usuario.nombre);
     this.usuarioInyectado.usuario.nombre;
+  }
+  cambiarNombre(){
+    this.usuarioInyectado.usuario.nombre="Julieta"
   }
 
 }
