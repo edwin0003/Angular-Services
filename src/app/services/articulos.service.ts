@@ -22,4 +22,8 @@ export class ArticulosService {
   {
     return this.http.post<Articulo>(this.ruta + "/posts", articulo);
   }
+  leerTodosLosUsuarios():Observable<User[]>
+  {
+    return this.http.get<User[]>(this.ruta + "/users/")
+  }
 }

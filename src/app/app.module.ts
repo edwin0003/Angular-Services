@@ -10,6 +10,7 @@ import { UsuarioService } from './services/usuario.service';
 import { ArticuloDetalleComponent } from './articulo-detalle/articulo-detalle.component';
 import { ArticulosService } from './services/articulos.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AgregarArticuloComponent } from './agregar-articulo/agregar-articulo.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     EncabezadoComponent,
     HomeComponent,
     PerfilComponent,
-    ArticuloDetalleComponent
+    ArticuloDetalleComponent,
+    AgregarArticuloComponent
   ],
   imports: [
     BrowserModule,
