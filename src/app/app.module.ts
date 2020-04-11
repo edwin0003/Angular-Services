@@ -11,7 +11,7 @@ import { ArticuloDetalleComponent } from './articulo-detalle/articulo-detalle.co
 import { ArticulosService } from './services/articulos.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AgregarArticuloComponent } from './agregar-articulo/agregar-articulo.component';
-
+import {ReactiveFormsModule} from '@angular/forms'
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +24,8 @@ import { AgregarArticuloComponent } from './agregar-articulo/agregar-articulo.co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     UsuarioService,
