@@ -26,4 +26,8 @@ export class ArticulosService {
   {
     return this.http.get<User[]>(this.ruta + "/users/")
   }
+  borrarArticulo(id: number): Observable<any>
+  {
+    return this.http.delete<any>(this.ruta + "/posts/" + id) ;
+  }
 }
