@@ -1,5 +1,6 @@
 <div class="container">
     <form [formGroup]="formularioArticulo">
+        <h2> {{titulo}} </h2>
         <div class="form-group">
             <label for="">Titulo</label>
             <input type="text" class="form-control" formControlName="title">
@@ -14,6 +15,7 @@
                 <option *ngFor="let usuario of usuarios" [value]="usuario.id"> {{usuario.name}} </option>
             </select>
         </div>
-        <button class="btn btn-primary" [disabled]="!formularioArticulo.valid" (click)="agregar()">Agregar</button>
+        <button *ngIf="esNuevo" class="btn btn-primary" [disabled]="!formularioArticulo.valid" (click)="agregar()">Agregar</button>
+        <button *ngIf="!esNuevo" class="btn btn-success" [disabled]="!formularioArticulo.valid" (click)="editar()">Editar</button>
     </form>
 </div>

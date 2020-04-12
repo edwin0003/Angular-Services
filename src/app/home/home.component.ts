@@ -44,4 +44,9 @@ export class HomeComponent implements OnInit {
       console.log('eliminado correctamente');
     })
   }
+  actualizar(articulo: Articulo){
+
+    this.articuloInyectado.articulo= articulo;
+    this.Ruta.navigateByUrl("/agregar-articulo/false");
+  }
 }

@@ -24,10 +24,14 @@ export class ArticulosService {
   }
   leerTodosLosUsuarios():Observable<User[]>
   {
-    return this.http.get<User[]>(this.ruta + "/users/")
+    return this.http.get<User[]>(`${this.ruta}` +"/users/")
   }
   borrarArticulo(id: number): Observable<any>
   {
-    return this.http.delete<any>(this.ruta + "/posts/" + id) ;
+    return this.http.delete<any>(`${this.ruta}`+ "/posts/"+ `${id}`) ;
+  }
+  actualizarArticulo(articulo: Articulo): Observable<Articulo>
+  {
+    return this.http.put<Articulo>(`${this.ruta}` +"/posts/"+ `${articulo.id}`, articulo)
   }
 }
